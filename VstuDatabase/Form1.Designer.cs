@@ -30,6 +30,13 @@
         {
             this.controlPanel = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.wordExportButton = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.yearField = new System.Windows.Forms.TextBox();
+            this.defaultReportButton = new System.Windows.Forms.Button();
+            this.bestClientReportButton = new System.Windows.Forms.Button();
+            this.excelExportButton = new System.Windows.Forms.Button();
+            this.reportDataGrid = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.clientIdLable = new System.Windows.Forms.Label();
             this.deleteButtonClick = new System.Windows.Forms.Button();
@@ -46,18 +53,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.nameField = new System.Windows.Forms.TextBox();
             this.addUserButton = new System.Windows.Forms.Button();
-            this.reportDataGrid = new System.Windows.Forms.DataGridView();
-            this.excelExportButton = new System.Windows.Forms.Button();
-            this.bestClientReportButton = new System.Windows.Forms.Button();
-            this.defaultReportButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.wordExportButton = new System.Windows.Forms.Button();
             this.controlPanel.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reportDataGrid)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientData)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reportDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // controlPanel
@@ -74,7 +74,7 @@
             // 
             this.tabPage1.Controls.Add(this.wordExportButton);
             this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.yearField);
             this.tabPage1.Controls.Add(this.defaultReportButton);
             this.tabPage1.Controls.Add(this.bestClientReportButton);
             this.tabPage1.Controls.Add(this.excelExportButton);
@@ -86,6 +86,72 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Отчет";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // wordExportButton
+            // 
+            this.wordExportButton.Location = new System.Drawing.Point(9, 48);
+            this.wordExportButton.Name = "wordExportButton";
+            this.wordExportButton.Size = new System.Drawing.Size(244, 36);
+            this.wordExportButton.TabIndex = 6;
+            this.wordExportButton.Text = "экспорт в Word";
+            this.wordExportButton.UseVisualStyleBackColor = true;
+            this.wordExportButton.Click += new System.EventHandler(this.WordExportButton_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 273);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(36, 17);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Год:";
+            // 
+            // yearField
+            // 
+            this.yearField.Location = new System.Drawing.Point(6, 293);
+            this.yearField.Name = "yearField";
+            this.yearField.Size = new System.Drawing.Size(244, 22);
+            this.yearField.TabIndex = 4;
+            // 
+            // defaultReportButton
+            // 
+            this.defaultReportButton.Location = new System.Drawing.Point(6, 321);
+            this.defaultReportButton.Name = "defaultReportButton";
+            this.defaultReportButton.Size = new System.Drawing.Size(244, 41);
+            this.defaultReportButton.TabIndex = 3;
+            this.defaultReportButton.Text = "Стандартный отчет";
+            this.defaultReportButton.UseVisualStyleBackColor = true;
+            this.defaultReportButton.Click += new System.EventHandler(this.DefaultReportButton_Click);
+            // 
+            // bestClientReportButton
+            // 
+            this.bestClientReportButton.Location = new System.Drawing.Point(6, 368);
+            this.bestClientReportButton.Name = "bestClientReportButton";
+            this.bestClientReportButton.Size = new System.Drawing.Size(244, 41);
+            this.bestClientReportButton.TabIndex = 2;
+            this.bestClientReportButton.Text = "Лучшие покупатели за год";
+            this.bestClientReportButton.UseVisualStyleBackColor = true;
+            this.bestClientReportButton.Click += new System.EventHandler(this.BestClientReportButton_Click);
+            // 
+            // excelExportButton
+            // 
+            this.excelExportButton.Location = new System.Drawing.Point(6, 6);
+            this.excelExportButton.Name = "excelExportButton";
+            this.excelExportButton.Size = new System.Drawing.Size(244, 36);
+            this.excelExportButton.TabIndex = 1;
+            this.excelExportButton.Text = "экспорт в Excel";
+            this.excelExportButton.UseVisualStyleBackColor = true;
+            this.excelExportButton.Click += new System.EventHandler(this.ExcelExportButton_Click);
+            // 
+            // reportDataGrid
+            // 
+            this.reportDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.reportDataGrid.Location = new System.Drawing.Point(256, 6);
+            this.reportDataGrid.Name = "reportDataGrid";
+            this.reportDataGrid.RowHeadersWidth = 51;
+            this.reportDataGrid.RowTemplate.Height = 24;
+            this.reportDataGrid.Size = new System.Drawing.Size(796, 403);
+            this.reportDataGrid.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -128,7 +194,7 @@
             this.deleteButtonClick.TabIndex = 14;
             this.deleteButtonClick.Text = "Удалить";
             this.deleteButtonClick.UseVisualStyleBackColor = true;
-            this.deleteButtonClick.Click += new System.EventHandler(this.deleteButtonClick_Click);
+            this.deleteButtonClick.Click += new System.EventHandler(this.DeleteButtonClick_Click);
             // 
             // changeButtonClick
             // 
@@ -138,7 +204,7 @@
             this.changeButtonClick.TabIndex = 13;
             this.changeButtonClick.Text = "Изменить";
             this.changeButtonClick.UseVisualStyleBackColor = true;
-            this.changeButtonClick.Click += new System.EventHandler(this.changeButtonClick_Click);
+            this.changeButtonClick.Click += new System.EventHandler(this.ChangeButtonClick_Click);
             // 
             // dateOfBirthField
             // 
@@ -156,7 +222,7 @@
             this.clientData.RowTemplate.Height = 24;
             this.clientData.Size = new System.Drawing.Size(760, 381);
             this.clientData.TabIndex = 11;
-            this.clientData.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.clientData_RowHeaderMouseClick_1);
+            this.clientData.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ClientData_RowHeaderMouseClick_1);
             // 
             // sexField
             // 
@@ -239,70 +305,7 @@
             this.addUserButton.TabIndex = 0;
             this.addUserButton.Text = "Добавить";
             this.addUserButton.UseVisualStyleBackColor = true;
-            this.addUserButton.Click += new System.EventHandler(this.addUserButton_Click);
-            // 
-            // reportDataGrid
-            // 
-            this.reportDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.reportDataGrid.Location = new System.Drawing.Point(256, 6);
-            this.reportDataGrid.Name = "reportDataGrid";
-            this.reportDataGrid.RowHeadersWidth = 51;
-            this.reportDataGrid.RowTemplate.Height = 24;
-            this.reportDataGrid.Size = new System.Drawing.Size(796, 403);
-            this.reportDataGrid.TabIndex = 0;
-            // 
-            // excelExportButton
-            // 
-            this.excelExportButton.Location = new System.Drawing.Point(6, 6);
-            this.excelExportButton.Name = "excelExportButton";
-            this.excelExportButton.Size = new System.Drawing.Size(244, 36);
-            this.excelExportButton.TabIndex = 1;
-            this.excelExportButton.Text = "экспорт в Excel";
-            this.excelExportButton.UseVisualStyleBackColor = true;
-            this.excelExportButton.Click += new System.EventHandler(this.excelExportButton_Click);
-            // 
-            // bestClientReportButton
-            // 
-            this.bestClientReportButton.Location = new System.Drawing.Point(6, 368);
-            this.bestClientReportButton.Name = "bestClientReportButton";
-            this.bestClientReportButton.Size = new System.Drawing.Size(244, 41);
-            this.bestClientReportButton.TabIndex = 2;
-            this.bestClientReportButton.Text = "Лучшие покупатели за год";
-            this.bestClientReportButton.UseVisualStyleBackColor = true;
-            // 
-            // defaultReportButton
-            // 
-            this.defaultReportButton.Location = new System.Drawing.Point(6, 321);
-            this.defaultReportButton.Name = "defaultReportButton";
-            this.defaultReportButton.Size = new System.Drawing.Size(244, 41);
-            this.defaultReportButton.TabIndex = 3;
-            this.defaultReportButton.Text = "Стандартный отчет";
-            this.defaultReportButton.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(6, 293);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(244, 22);
-            this.textBox1.TabIndex = 4;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 273);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(36, 17);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Год:";
-            // 
-            // wordExportButton
-            // 
-            this.wordExportButton.Location = new System.Drawing.Point(9, 48);
-            this.wordExportButton.Name = "wordExportButton";
-            this.wordExportButton.Size = new System.Drawing.Size(244, 36);
-            this.wordExportButton.TabIndex = 6;
-            this.wordExportButton.Text = "экспорт в Word";
-            this.wordExportButton.UseVisualStyleBackColor = true;
+            this.addUserButton.Click += new System.EventHandler(this.AddUserButton_Click);
             // 
             // Form1
             // 
@@ -315,10 +318,10 @@
             this.controlPanel.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.reportDataGrid)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientData)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reportDataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -349,7 +352,7 @@
         private System.Windows.Forms.Button defaultReportButton;
         private System.Windows.Forms.Button wordExportButton;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox yearField;
     }
 }
 

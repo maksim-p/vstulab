@@ -35,14 +35,14 @@ namespace VstuDatabase
             sexField.Text = "";
         }
 
-        private void addUserButton_Click(object sender, EventArgs e)
+        private void AddUserButton_Click(object sender, EventArgs e)
         {
             clientService.AddClient(nameField.Text, lastNameField.Text, dateOfBirthField.Text, phoneField.Text, sexField.Text, clientData);
             CleanData();
         }
 
 
-        private void clientData_RowHeaderMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)
+        private void ClientData_RowHeaderMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)
         {
             clientIdLable.Text = clientData.Rows[e.RowIndex].Cells[0].Value.ToString();
             nameField.Text = clientData.Rows[e.RowIndex].Cells[1].Value.ToString();
@@ -52,17 +52,26 @@ namespace VstuDatabase
             sexField.Text = clientData.Rows[e.RowIndex].Cells[5].Value.ToString();
         }
 
-        private void changeButtonClick_Click(object sender, EventArgs e)
+        private void ChangeButtonClick_Click(object sender, EventArgs e)
         {
             clientService.ChangeClient(nameField.Text, lastNameField.Text, dateOfBirthField.Text, phoneField.Text, sexField.Text, clientIdLable.Text, clientData);
             CleanData();
         }
-        private void deleteButtonClick_Click(object sender, EventArgs e)
+        private void DeleteButtonClick_Click(object sender, EventArgs e)
         {
             clientService.DeleteClient(clientIdLable.Text, clientData);
             CleanData();
         }
 
-        private void excelExportButton_Click(object sender, EventArgs e) => reportService.ExportExcel(reportDataGrid);
+        private void ExcelExportButton_Click(object sender, EventArgs e) => reportService.ExportExcel(reportDataGrid);
+
+        private void DefaultReportButton_Click(object sender, EventArgs e) => reportService.DisplayDefaultReport(reportDataGrid);
+
+        private void BestClientReportButton_Click(object sender, EventArgs e) => reportService.DisplayBestClientReport(reportDataGrid, yearField.Text);
+
+        private void WordExportButton_Click(object sender, EventArgs e)
+        {
+            reportService.ExportWord(reportDataGrid);
+        }
     }
 }
