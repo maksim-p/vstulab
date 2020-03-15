@@ -158,8 +158,6 @@ namespace VstuDatabase.service
                     oDoc.Application.Selection.Tables[1].Cell(1, c + 1).Range.Text = DGV.Columns[c].HeaderText;
                 }
 
-                
-
                 //Текст заголовка
                 foreach (Microsoft.Office.Interop.Word.Section section in oDoc.Application.ActiveDocument.Sections)
                 {
@@ -170,8 +168,6 @@ namespace VstuDatabase.service
                     headerRange.ParagraphFormat.Alignment = Microsoft.Office.Interop.Word.WdParagraphAlignment.wdAlignParagraphCenter;
                 }
 
-                //save the file
-                // oDoc.SaveAs2(filename);
             }
             }
 

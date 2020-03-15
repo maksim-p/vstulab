@@ -69,9 +69,6 @@ namespace VstuDatabase
 
         private void BestClientReportButton_Click(object sender, EventArgs e) => reportService.DisplayBestClientReport(reportDataGrid, yearField.Text);
 
-        private void WordExportButton_Click(object sender, EventArgs e)
-        {
-            reportService.ExportWord(reportDataGrid);
-        }
+        private void WordExportButton_Click(object sender, EventArgs e) => reportService.ExportWord(reportDataGrid);
     }
 }
